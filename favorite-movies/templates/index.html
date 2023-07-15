@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}My watched Movies{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="heading">My favorite Movies</h1>
+  <p class="description">These are my all-time favourite movies.</p>
+    <div class="container text-center add">
+        <a href="{{ url_for('add') }}" class="button">Add Movie</a>
+    </div>
+    {% if films == [] %}
+        <h2>Library is empty</h2>
+    {% else %}
+    {% for film in films: %}
+  <div class="card" >
+    <div class="front" style="background-image: url('{{ film['img_url'] }}');">
+    </div>
+    <div class="back">
+      <div>
+    <div class="title">{{ film["title"] }} <span class="release_date">{{ film["year"] }}</span></div>
+        <div class="rating">
+            <label>{{ film["rating"] }}</label>
+          <i class="fas fa-star star"></i>
+        </div>
+          <p class="review">{{ film["review"] }}</p>
+        <p class="overview">
+            {{ film["description"] }}
+        </p>
+
+        <a href="{{ url_for('edit', id=film.id) }}" class="button">Update</a>
+        <a href="{{ url_for('delete', id=film.id) }}" class="button delete-button">Delete</a>
+
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}
