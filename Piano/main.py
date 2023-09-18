@@ -15,7 +15,7 @@ left_hand = LeftHand()
 right_hand = RightHand()
 # Init Pygame
 pygame.init()
-
+pygame.mixer.set_num_channels(50)
 WIDTH = 1600
 HEIGHT = 200
 # colors
@@ -60,60 +60,84 @@ while running:
             # white keys left hand
             if event.key == pygame.K_y:
                 piano_keys[left_hand.play_note("Y")].sound.play()
+                print(piano_keys[left_hand.play_note("Y")].note)
             if event.key == pygame.K_x:
                 piano_keys[left_hand.play_note("X")].sound.play()
+                print(piano_keys[left_hand.play_note("X")].note)
             if event.key == pygame.K_c:
                 piano_keys[left_hand.play_note("C")].sound.play()
+                print(piano_keys[left_hand.play_note("C")].note)
             if event.key == pygame.K_v:
                 piano_keys[left_hand.play_note("V")].sound.play()
+                print(piano_keys[left_hand.play_note("V")].note)
             if event.key == pygame.K_b:
                 piano_keys[left_hand.play_note("B")].sound.play()
+                print(piano_keys[left_hand.play_note("B")].note)
             if event.key == pygame.K_n:
                 piano_keys[left_hand.play_note("N")].sound.play()
+                print(piano_keys[left_hand.play_note("N")].note)
             if event.key == pygame.K_m:
                 piano_keys[left_hand.play_note("M")].sound.play()
+                print(piano_keys[left_hand.play_note("M")].note)
             # black keys left hand
             if event.key == pygame.K_a:
                 piano_keys[left_hand.play_note("A")].sound.play()
+                print(piano_keys[left_hand.play_note("A")].note)
             if event.key == pygame.K_s:
                 piano_keys[left_hand.play_note("S")].sound.play()
+                print(piano_keys[left_hand.play_note("S")].note)
             if event.key == pygame.K_d:
                 piano_keys[left_hand.play_note("D")].sound.play()
+                print(piano_keys[left_hand.play_note("D")].note)
             if event.key == pygame.K_f:
                 piano_keys[left_hand.play_note("F")].sound.play()
+                print(piano_keys[left_hand.play_note("F")].note)
             if event.key == pygame.K_g:
                 piano_keys[left_hand.play_note("G")].sound.play()
+                print(piano_keys[left_hand.play_note("G")].note)
 
             # white keys right hand
             if event.key == pygame.K_KP1:
                 piano_keys[right_hand.play_note("1")].sound.play()
+                print(piano_keys[right_hand.play_note("1")].note)
             if event.key == pygame.K_KP2:
                 piano_keys[right_hand.play_note("2")].sound.play()
+                print(piano_keys[right_hand.play_note("2")].note)
             if event.key == pygame.K_KP3:
                 piano_keys[right_hand.play_note("3")].sound.play()
+                print(piano_keys[right_hand.play_note("3")].note)
             if event.key == pygame.K_KP4:
                 piano_keys[right_hand.play_note("4")].sound.play()
+                print(piano_keys[right_hand.play_note("4")].note)
             if event.key == pygame.K_KP5:
                 piano_keys[right_hand.play_note("5")].sound.play()
+                print(piano_keys[right_hand.play_note("5")].note)
             if event.key == pygame.K_KP6:
                 piano_keys[right_hand.play_note("6")].sound.play()
+                print(piano_keys[right_hand.play_note("6")].note)
             if event.key == pygame.K_KP7:
                 piano_keys[right_hand.play_note("7")].sound.play()
+                print(piano_keys[right_hand.play_note("7")].note)
             # black keys right hand
             if event.key == pygame.K_KP8:
                 piano_keys[right_hand.play_note("8")].sound.play()
+                print(piano_keys[right_hand.play_note("8")].note)
             if event.key == pygame.K_KP9:
                 piano_keys[right_hand.play_note("9")].sound.play()
+                print(piano_keys[right_hand.play_note("9")].note)
             if event.key == pygame.K_KP_DIVIDE:
                 piano_keys[right_hand.play_note("/")].sound.play()
+                print(piano_keys[right_hand.play_note("/")].note)
             if event.key == pygame.K_KP_MULTIPLY:
                 piano_keys[right_hand.play_note("*")].sound.play()
+                print(piano_keys[right_hand.play_note("*")].note)
             if event.key == pygame.K_KP_MINUS:
                 piano_keys[right_hand.play_note("-")].sound.play()
+                print(piano_keys[right_hand.play_note("-")].note)
 
             # octave change
             if event.key == pygame.K_RIGHT:
-                if left_hand.octave != 8 and left_hand.octave+1 != right_hand.octave:
+                if left_hand.octave != 7 and left_hand.octave+1 != right_hand.octave:
                     left_hand.draw_hand(screen, "grey")
                     left_hand.x += 210
                     left_hand.draw_hand(screen, (255, 0, 0))
